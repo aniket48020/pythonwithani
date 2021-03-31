@@ -1,0 +1,15 @@
+create table carden(Ccode numeric(10),Carname varchar(20),Make varchar(20),colour varchar(20),Capacity numeric(5),Charges numeric(5));
+insert into carden values(501,"A star","Suzuki","Red",3,14);
+insert into carden values(503,"Indigo","Tata","Silver",3,12);
+insert into carden values(502,"Innova","Toyota","White",7,15);
+insert into carden values(509,"SX4","Suzuki","Silver",4,14);
+insert into carden values(510,"C Class","Mercedes","Red",4,35);
+create table customer(Code numeric(10),Cname varchar(20),Ccode numeric(10));
+insert into customer values(1001,"Hernant Sahu",501);
+insert into customer values(1002,"Raj Lal",509);
+insert into customer values(1003,"Feroza Shah",503);
+insert into customer values(1004,"Ketan Shah",502);
+SELECT Carname from carden where colour="Silver";
+SELECT Carname,Make,Capacity from carden order by Capacity desc;
+SELECT MAX(Charges) from carden;
+SELECT Cname,Carname From customer,carden WHERE carden.Ccode=customer.Ccode;
